@@ -6,9 +6,9 @@ What is MORSE?
    :align: center
 .. Introducing MORSE
 
-MORSE is an **generic simulator for academic robotics**. It focuses on realistic
+MORSE is a **generic simulator for academic robotics**. It focuses on realistic
 3D simulation of **small to large environments, indoor or outdoor**, with **one
-to tenths of autonomous robots**.
+to tens of autonomous robots**.
 
 MORSE can be entirely controlled from the **command-line**. Simulation scenes are
 **generated from simple Python scripts**.
@@ -21,7 +21,7 @@ controllers, high-level waypoints controllers, generic joint controllers) and
 
 MORSE rendering is based on the `Blender Game Engine
 <http://www.blender.org>`_.  The OpenGL-based Game Engine supports shaders,
-provides advanced lightning options, supports multi-texturing, and use the
+provides advanced lighting options, supports multi-texturing, and uses the
 state-of-the-art `Bullet <http://bulletphysics.org>`_ library for physics
 simulation.
 
@@ -42,9 +42,9 @@ One of the main design choice for MORSE is the ability to select the *degree of
 realism* of the simulation: if you are working on vision, you need accurate
 camera sensors, but may not care about the realism of your motion controller,
 and you may find a waypoint controller good enough and easier to use. On the
-contrary, if you work on robot supervision, you may prefer skip the perception
-stack and directly work with objects ID and positions.  MORSE lets you define
-how realistic the different components of you robot need to be to fit your
+other hand, if you work on robot supervision, you may prefer to skip the perception
+stack and directly work with object IDs and positions.  MORSE lets you define
+how realistic the different components of your robot need to be to fit your
 needs.
 
 MORSE also supports two different strategies for handling time: **best effort**,
@@ -58,14 +58,14 @@ Extending MORSE
 
 MORSE is mostly written in Python: except for computation intensive processes
 (like 3D rendering or physics simulation), MORSE is a purely Python
-application. This enable easy and fast modification of the source code.
+application. This enables easy and fast modification of the source code.
 
 .. image:: ../media/python-powered.png
    :align: center
 .. MORSE extensively uses Python
 
 Besides, MORSE has been designed to be modular: adding a new sensor, a new
-actuator, a post-processing (like applying a noise function), adding new
+actuator, some post-processing (like applying a noise function), adding new
 services, or even a complete communication middleware is reasonably easy and
 documented.
 
@@ -73,29 +73,29 @@ documented.
 Integration in your workflow
 ----------------------------
 
-MORSE do not make any assumption on your architecture. MORSE currently
+MORSE does not make any assumptions about your architecture. MORSE currently
 supports **6 open-source middlewares (ROS, YARP, Pocolibs, MOOS, HLA and
 Mavlink)**. :doc:`Check here the exact list of features supported for each
 middleware <user/integration>`.
 
-It also supports a **simple socket-based protocol** for easy integration in
-other languages/toolbox. **Complete bindings for Python** are provided.
+It also supports a **simple socket-based protocol** for easy integration with
+other languages/toolkits. **Complete bindings for Python** are provided.
 
 MORSE comes with a :doc:`set of standard sensors and actuators
-<components_library>`. To suit your specific need, MORSE also provides a
-:doc:`lightweight overlay <user/overlays>` mechanism to quickly change the name
+<components_library>`. To suit your specific needs, MORSE also provides a
+:doc:`lightweight overlay <user/overlays>` mechanism to quickly change the names
 and types of exchanged data flows.
 
-Also note that MORSE benefits from Blender import/export capabilities: existing
+Also note that MORSE benefits from Blender's import/export capabilities: existing
 models in many 3D formats (Collada, DXF, 3DS Max, VRML to name a few) can be
 used to build robots and environments.
 
 
-Performances
-------------
+Performance
+-----------
 
 MORSE is able to handle dozen of robots in a single environment as long as
-cameras are not simulated (because of bandwidth limitation).
+cameras are not simulated (due to bandwidth limitations).
 
 For instance, MORSE running on an Opteron quadcore 2GHz, in :doc:`headless mode <headless>` (i.e.
 **without 3D acceleration**), can simulate:
@@ -106,10 +106,10 @@ For instance, MORSE running on an Opteron quadcore 2GHz, in :doc:`headless mode 
 
 (measured with standard ROS tools)
 
-When cameras do no need to be simulated, MORSE offers a **fast mode** with much
-improved performances.
+When cameras do no need to be simulated, MORSE offers a **fast mode** with far
+better performance.
 
-MORSE is also suited for large simulations of complex robots: MORSE can be run
+MORSE is also suitable for large simulations of complex robots: MORSE can be run
 as a distributed network of :doc:`simulation nodes <multinode>`. Each node
 automatically synchronizes with the others (however, due to latencies, do not
 expect to simulate accurate physical interactions in the distributed mode).
@@ -125,17 +125,17 @@ MORSE installation
 
 MORSE is packaged in Debian/Ubuntu: `sudo apt-get install morse-simulator`
 
-MORSE is also easy to compile from the source. It has only two dependencies:
-Python and Blender (well, plus the middlewares you want to use, obviously). Any
-Linux distribution should provide out of the box all required dependencies.
+MORSE is also easy to compile from source. It has only three dependencies:
+Python, Blender, and the middleware you want to use. Any
+Linux distribution should provide all the required dependencies out of the box.
 
 :doc:`MORSE installation <user/installation>` is based on CMake, and allows you
-to only install support for parts relevant to your needs (why installing YARP
-support if you are using ROS?).
+to install only those parts relevant to your needs (so, for example, if you are
+only using ROS, you aren't forced to install YARP).
 
 MORSE is also available as a `robotpkg <http://robotpkg.openrobots.org>`_
 package: ``robotpkg`` is a package manager for robotics related software that
-will take care automatically of all dependencies required by MORSE.
+will automatically take care of all the dependencies required by MORSE.
 
 
 MORSE as a software project
@@ -148,7 +148,7 @@ MORSE as a software project
 MORSE and all the libraries it relies on are open-source projects.
 
 MORSE itself is licensed under a permissive BSD license: you can use it for any
-purposes, without having to share your modifications back.
+purpose, without having to share your modifications.
 
 This also means that MORSE follows a open development process: you can fork
 MORSE source code on `GitHub <http://github.com/morse-simulator/morse>`_ and
@@ -177,9 +177,9 @@ rendering with shader support, import/export of 3D models, and `Bullet
 These two huge open-source projects are very active and are supported by large
 communities of users and developers.
 
-This means tons of tutorials, code examples, reusable snippets, etc.
+This means tons of tutorials, code examples, reusable snippets, etc., are available.
 
-This also ensures that, even if the MORSE core team would disappear, you would
+This also ensures that, even if the MORSE core team should disappear, you would
 still be able to ask for support!
 
 MORSE also integrates with other large open-source projects like `ROS
@@ -189,8 +189,8 @@ community.
 Documentation
 +++++++++++++
 
-MORSE has a complete and up-to-date online documentation, both for the users and
-the developers: `MORSE documentation <http://www.openrobots.org/morse/doc>`_.
+MORSE has complete and up-to-date online documentation, for both users and
+developers: `MORSE documentation <http://www.openrobots.org/morse/doc>`_.
 
 Several :doc:`tutorials <tutorials>` are also available, for a quick start.
 
@@ -203,8 +203,8 @@ Several :doc:`tutorials <tutorials>` are also available, for a quick start.
 Focus on academic requirements
 -------------------------------
 
-MORSE is born at `LAAS-CNRS <http://www.laas.fr>`_, a public French laboratory,
-one of the biggest in robotics.
+MORSE was originally created at `LAAS-CNRS <http://www.laas.fr>`_, a public 
+French laboratory, one of the biggest in robotics.
 
 `Many more universities and institutes
 <https://github.com/morse-simulator/morse/blob/master/doc/survey/first-survey/report.tex>`_ have joined the effort and collaboratively take part in assuring the
@@ -240,10 +240,10 @@ when assessing simulation solutions:
   advantage, others may miss it. An important correlate: MORSE is primarily
   targeted at experienced computer scientists. While we spend a lot of time
   designing a convenient and intuitive interface (after all, we use it on a
-  daily base for our own researches!), do not use MORSE if you are not
+  daily base for our own research!), MORSE won't suit you if you are not
   comfortable with command-line tools.
 
-- contrary to other simulators, MORSE does not embed any advanced algorithms
+- unlike other simulators, MORSE does not embed any advanced algorithms
   (like path planning). You are expected to run them in your own robot software
   stack.
 
